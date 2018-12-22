@@ -1,7 +1,10 @@
 import React from 'react';
+import Logo from '../images/logo.png';
 
 export default function Layout() {
     return (
-        <div>Hello world</div>
+        <div className="header">
+            <img src={Logo} />
+        </div>
     );
 }

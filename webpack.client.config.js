@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: ['webpack/hot/only-dev-server', './src/client/index.js'],
+    entry: ['./src/client/index.js'],
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
@@ -20,7 +20,6 @@ module.exports = {
                 options: {
                     presets: [['env', { modules: false }], 'react'],
                     plugins: [
-                        'react-hot-loader/babel',
                         ['transform-object-rest-spread', { useBuiltIns: true }],
                         'transform-class-properties'
                     ]
@@ -44,7 +43,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('styles.css'),
-        new webpack.HotModuleReplacementPlugin()
+        new ExtractTextPlugin('styles.css')
     ]
 };

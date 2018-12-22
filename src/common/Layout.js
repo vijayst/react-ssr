@@ -3,8 +3,9 @@ import Logo from '../images/logo.png';
 
 export default function Layout() {
     return (
-        <div className="header">
+        <div>
             <img src={Logo} />
+            <div>React SSR example</div>
         </div>
     );
 }

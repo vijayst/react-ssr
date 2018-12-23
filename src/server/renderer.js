@@ -3,16 +3,11 @@ import ReactDOM from "react-dom/server";
 import Layout from "../common/Layout";
 import { StaticRouter } from "react-router-dom";
 import Helmet from "react-helmet";
-import routes from "./routes";
-import { matchRoutes } from "react-router-config";
+import getData from "../common/getData";
 
-function noOp() {}
 
 export default function renderer(html, path, context) {
-    const matches = matchRoutes(routes, path);
-    const promises = matches
-        .filter(m => !!m.route.loadData)
-        .map(m => m.route.loadData().catch(noOp));
+    const promises = getData(path);
     context.data = {};
     return Promise.all(promises).then(responses => {
         responses.forEach(r => {

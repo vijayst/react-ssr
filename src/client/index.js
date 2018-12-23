@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Layout from "../common/Layout";
 import "../sass/index.scss";
 import { BrowserRouter } from "react-router-dom";
-import { matchRoutes } from "react-router-config";
 import getData from "../common/getData";
 import StaticContext from "./StaticContext";
 

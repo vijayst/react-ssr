@@ -8,3 +8,5 @@ Explains the various concepts involved in server-side-rendering React apps.
 * Server rendered meta tags using react-helmet.
 * Render HTML with prefetched data.
 * Client side data hydration.
+
+More explanation is available [in my blog in the form of a tutorial](https://vijayt.com/post/challenges-in-server-side-rendering-react-apps-ssr/).

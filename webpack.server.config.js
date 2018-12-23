@@ -22,7 +22,6 @@ module.exports = {
                 options: {
                     presets: [['env', { modules: false }], 'react'],
                     plugins: [
-                        'react-hot-loader/babel',
                         ['transform-object-rest-spread', { useBuiltIns: true }],
                         'transform-class-properties'
                     ]

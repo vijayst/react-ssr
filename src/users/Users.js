@@ -12,13 +12,17 @@ export function loadData() {
   }
 
 export default function Users(props) {
-  const [users, setUsers] = useState([]);
+  let [users, setUsers] = useState([]);
   
   useEffect(() => {
     loadData().then(data => {
       setUsers(data.users);
     });
   }, []);
+
+  if (props.staticContext) {
+    users = props.staticContext.data.users;
+  }
 
   return (
     <div>

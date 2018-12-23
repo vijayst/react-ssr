@@ -3,11 +3,20 @@ import { Link } from "react-router-dom";
 import Helmet from "react-helmet";
 import axios from "axios";
 
-export default function Users() {
+export function loadData() {
+    return axios.get("http://react-ssr-api.herokuapp.com/users").then(response => {
+        return {
+            users: response.data
+        };
+      });
+  }
+
+export default function Users(props) {
   const [users, setUsers] = useState([]);
+  
   useEffect(() => {
-    axios.get("http://react-ssr-api.herokuapp.com/users").then(response => {
-      setUsers(response.data);
+    loadData().then(data => {
+      setUsers(data.users);
     });
   }, []);
 
